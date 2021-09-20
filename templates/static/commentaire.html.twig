@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} Commentaire{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="container">
+        {{form_label(form.nom,'Nom',{'label_attr':{'class':'fw-bold'}})}}
+        {{form_widget(form.nom,{'attr':{'class':'form-control' , 'placeholder':'le nom'}})}}
+
+        {{form_label(form.message,'Message',{'label_attr':{'class':'fw-bold'}})}}
+        {{form_widget(form.message,{'attr':{'class':'form-control'}})}}
+        
+        {{form_label(form.note,'note',{'label_attr':{'class':'fw-bold'}})}}
+        {{form_widget(form.note,{'attr':{'class':'form-control'}})}}
+        
+
+        <br>
+        {{form_widget(form.envoyer, {'label':"Soumettre le formulaire", 'attr':{'class':'btn bg-primary'}})}}
+    </div>
+{{ form_end(form,{render_rest:true})}}
+{% endblock %}
