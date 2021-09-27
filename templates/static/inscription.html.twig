@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} Inscription{% endblock %}
+
+{% block body %}
+
+<h1 class="text-primary text-center">Bienvenue sur SHARE-Inscription ✅ je suis un chien</h1>
+
+
+{{ form_start(form) }}
+
+{{ form_end(form,{render_rest:true})}}
+{% endblock %}

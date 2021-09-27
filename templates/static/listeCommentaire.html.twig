@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} Commentaire{% endblock %}
+
+{% block body %}
+
+<h1 class="text-primary text-center">Liste des commentaires</h1>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">message</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for commentaire in commentaires %} 
+            <tr class="{{ cycle(['table-primary','table-secondary'],loop.index0)}}">
+                <td>{{ commentaire.nom | capitalize }}</td>
+                <td>{{ commentaire.message | capitalize }}</td>
+                <td>{{ commentaire.note | capitalize }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
